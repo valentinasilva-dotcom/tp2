@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google LED | Iluminación Inteligente</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-container">
+            <i class="fa-solid fa-lightbulb logo-icon"></i>
+            <h1 class="logo-text">Google <span>LED</span></h1>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar focos, tiras LED, paneles...">
+            <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="header-actions">
+            <button id="theme-toggle" class="btn-icon" title="Cambiar tema">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <button id="cart-toggle" class="btn-icon" title="Ver carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div id="toast-container" class="toast-container"></div>
+
+        <!-- Filtros y Categorías -->
+        <section class="filters-section">
+            <h2>Categorías</h2>
+            <div class="categories-buttons">
+                <button class="btn-filter active" data-category="todos">Todos</button>
+                <button class="btn-filter" data-category="smart">Smart Home</button>
+                <button class="btn-filter" data-category="tiras">Tiras & Neón LED</button>
+                <button class="btn-filter" data-category="comercial">Comercial</button>
+            </div>
+            
+            <div class="price-filter">
+                <label for="price-range">Precio máximo: $<span id="price-value">100000</span></label>
+                <input type="range" id="price-range" min="0" max="100000" step="5000" value="100000">
+            </div>
+        </section>
+
+        <!-- Grilla de Productos -->
+        <section class="products-section">
+            <h2>Productos Disponibles</h2>
+            <div id="products-grid" class="products-grid">
+                <!-- Carga dinámica vía JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Carrito Modal/Drawer -->
+    <aside id="cart-modal" class="cart-modal">
+        <div class="cart-header">
+            <h3>Tu Carrito</h3>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+
+        <div id="cart-items" class="cart-items">
+            <!-- Items agregados -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="discount-section">
+                <input type="text" id="discount-code" placeholder="Código (ej: GOOGLELED10)">
+                <button id="apply-discount">Aplicar</button>
+            </div>
+            <div class="cart-summary">
+                <p>Subtotal: $<span id="cart-subtotal">0</span></p>
+                <p>Descuento: $<span id="cart-discount">0</span></p>
+                <h4>Total: $<span id="cart-total">0</span></h4>
+            </div>
+            <button id="checkout-btn" class="btn-primary">Finalizar Compra</button>
+        </div>
+    </aside>
+
+    <div id="overlay" class="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
